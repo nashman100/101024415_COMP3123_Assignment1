@@ -47,7 +47,7 @@ This is a Node.js RESTful API built for managing users and employees. It allows 
    ```bash
    npm install
    ```
-###3. **Set up environment variables**:
+3. ### **Set up environment variables**:
    Create a `.env` file in the root of the project with the following:
    ```env
    MONGO_URI=your-mongodb-connection-string
