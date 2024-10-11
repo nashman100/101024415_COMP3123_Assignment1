@@ -45,7 +45,7 @@ router.post('/employees',
         }
 
         try{
-            const { first_name, last_name, email, position, salary, date_of_joining, department } = req.body;
+            const {first_name, last_name, email, position, salary, date_of_joining, department} = req.body;
             
             const employee = new Employee({
                 first_name,
@@ -105,15 +105,22 @@ router.put('/employees/:eid',
   });
   
 
-router.delete('/employees/:eid', authMiddleware, async (req, res) => {
+router.delete('/employees/', authMiddleware, async (req, res) => {
     try{
-        const employee = await Employee.findByIdAndDelete(req.params.eid);
+
+        const {eid} = req.query;
+
+        if(!eid){
+            return res.status(400).json({message: 'Employee ID is required'});
+        }
+
+        const employee = await Employee.findByIdAndDelete(eid);
 
         if(!employee){
             return res.status(404).json({message: 'Employee not found'});
         }
 
-        res.status(204).json({message: 'Employee deleted successfully'});
+        res.status(200).json({message: 'Employee deleted successfully'});
     } catch(err){
         res.status(500).json({message: 'Server error'});
     }
