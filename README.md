@@ -156,7 +156,12 @@ Replace `<your_jwt_token>` with the actual token value from the login response.
 - **Local URL**: `http://localhost:8081/api/v1/emp/employees?eid=xxx`
 - **Requires**: JWT token in `Authorization` header.
 - **Replace** `xxx` with the employee ID.
-- **Response**: `204 No Content` if the employee was successfully deleted.
+- **Response**: `200 OK` if the employee was successfully deleted.
+  ```json
+  {
+    "message": "Employee deleted successfully"
+  }
+  ```
 
 ## Testing with Postman
 Use **Postman** to test the API by sending requests to the above endpoints.  
