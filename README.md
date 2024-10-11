@@ -66,7 +66,8 @@ Create a `.env` file in the root of the project with the following:
 
 ### User Management
 #### Signup (POST)
-- **URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/user/signup`
+- **Vercel Hosted URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/user/signup`
+- **Local URL**: `http://localhost:8081/api/v1/user/signup`
 - **Payload**:
   ```json
   {
@@ -78,7 +79,8 @@ Create a `.env` file in the root of the project with the following:
 - **Response**: `201 Created` with user details.
 
 #### Login (POST)
-- **URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/user/login`
+- **Vercel Hosted URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/user/login`
+- **Local URL**: `http://localhost:8081/api/v1/user/login`
 - **Payload**:
   ```json
   {
@@ -105,18 +107,21 @@ Replace `<your_jwt_token>` with the actual token value from the login response.
 
 ### Employee Management
 #### Get All Employees (GET)
-- **URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees`
+- **Vercel Hosted URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees`
+- **Local URL**: `http://localhost:8081/api/v1/emp/employees`
 - **Requires**: JWT token in `Authorization` header.
 - **Response**: `200 OK` with an array of employee objects.
 
 #### Get Employee By ID (GET)
-- **URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees/{eid}`
+- **Vercel Hosted URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees/{eid}`
+- **Local URL**: `http://localhost:8081/api/v1/emp/employees/{eid}`
 - **Requires**: JWT token in `Authorization` header.
 - **Replace** `{eid}` with the employee ID.
 - **Response**: `200 OK` with employee details.
 
 #### Create New Employee (POST)
-- **URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees`
+- **Vercel Hosted URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees`
+- **Local URL**: `http://localhost:8081/api/v1/emp/employees`
 - **Requires**: JWT token in `Authorization` header.
 - **Payload**:
   ```json
@@ -133,7 +138,8 @@ Replace `<your_jwt_token>` with the actual token value from the login response.
 - **Response**: `201 Created` with the new employee ID.
 
 #### Edit Employee By ID (PUT)
-- **URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees/{eid}`
+- **Vercel Hosted URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees/{eid}`
+- **Local URL**: `http://localhost:8081/api/v1/emp/employees/{eid}`
 - **Requires**: JWT token in `Authorization` header.
 - **Replace** `{eid}` with the employee ID.
 - **Payload**:
@@ -146,7 +152,8 @@ Replace `<your_jwt_token>` with the actual token value from the login response.
 - **Response**: `200 OK` with the updated employee details.
 
 #### Delete Employee By ID (DELETE)
-- **URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees?eid=xxx`
+- **Vercel Hosted URL**: `https://101024415-comp-3123-assignment1.vercel.app/api/v1/emp/employees?eid=xxx`
+- **Local URL**: `http://localhost:8081/api/v1/emp/employees?eid=xxx`
 - **Requires**: JWT token in `Authorization` header.
 - **Replace** `xxx` with the employee ID.
 - **Response**: `204 No Content` if the employee was successfully deleted.
