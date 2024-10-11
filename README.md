@@ -37,6 +37,15 @@ This is a Node.js RESTful API built for managing users and employees. It allows 
 - A MongoDB Atlas account if running locally.
 - A GitHub account for repository access.
 
+### Environment Variables
+**Set up environment variables**:
+Create a `.env` file in the root of the project with the following:
+   ```env
+   MONGO_URI=your-mongodb-connection-string
+   JWT_SECRET=your-jwt-secret
+   PORT=8081
+   ```
+
 ### Installation
 1. **Clone the repository**:
    ```bash
@@ -47,15 +56,7 @@ This is a Node.js RESTful API built for managing users and employees. It allows 
    ```bash
    npm install
    ```
-3. ### **Set up environment variables**:
-   Create a `.env` file in the root of the project with the following:
-   ```env
-   MONGO_URI=your-mongodb-connection-string
-   JWT_SECRET=your-jwt-secret
-   PORT=8081
-   ```
-
-4. **Run the app locally**:
+3. **Run the app locally**:
    ```bash
    npm start
    ```
