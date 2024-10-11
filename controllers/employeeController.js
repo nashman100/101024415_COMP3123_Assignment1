@@ -35,7 +35,8 @@ router.post('/employees',
         body('email', 'Invalid email').isEmail(),
         body('position', 'Position is required').notEmpty(),
         body('salary', 'Salary must be a number').isNumeric(),
-        body('date_of_joining', 'Invalid date').isDate()
+        body('date_of_joining', 'Invalid date').isDate(),
+        body('department', 'Department is required').notEmpty()
     ], 
     async (req, res) => {
         const errors = validationResult(req);
@@ -78,7 +79,8 @@ router.put('/employees/:eid',
        body('email').optional().isEmail().withMessage('Invalid email address'),
        body('position').optional().notEmpty().withMessage('Position cannot be empty'),
        body('salary').optional().isNumeric().withMessage('Salary must be a number'),
-       body('date_of_joining').optional().isDate().withMessage('Invalid date')
+       body('date_of_joining').optional().isDate().withMessage('Invalid date'),
+       body('department').optional().notEmpty().withMessage('Department cannot be empty') 
     ],
     async (req, res) => {
       const errors = validationResult(req);
