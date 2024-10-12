@@ -12,6 +12,7 @@
   - [User Management](#user-management)
   - [Employee Management](#employee-management)
 - [Testing with Postman](#testing-with-postman)
+  -[Sample User Login](#sample-user-login)
 - [Author](#author)
 
 ## Overview
@@ -168,6 +169,13 @@ Use **Postman** to test the API by sending requests to the above endpoints.
 Remember to include the JWT token in the **Authorization** header when accessing protected routes:
 ```
 Authorization: Bearer <your_jwt_token>
+```
+## Sample User Login 
+```json
+{
+    "email": "testuser@example.com",
+    "password": "password123"
+}
 ```
 
 ## Author
