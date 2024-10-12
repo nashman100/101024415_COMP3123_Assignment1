@@ -12,7 +12,7 @@
   - [User Management](#user-management)
   - [Employee Management](#employee-management)
 - [Testing with Postman](#testing-with-postman)
-  -[Sample User Login](#sample-user-login)
+  - [Sample User Login](#sample-user-login)
 - [Author](#author)
 
 ## Overview
