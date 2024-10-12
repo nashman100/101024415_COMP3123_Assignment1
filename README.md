@@ -170,7 +170,7 @@ Remember to include the JWT token in the **Authorization** header when accessing
 ```
 Authorization: Bearer <your_jwt_token>
 ```
-## Sample User Login 
+### Sample User Login 
 ```json
 {
     "email": "testuser@example.com",
