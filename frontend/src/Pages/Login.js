@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import axios from 'axios'
+import API from './services/api';
 
 function Login(){
     const [formData, setFormData] = useState({email: '', password: ''});
@@ -13,7 +13,7 @@ function Login(){
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            const response = await axios.post('/user/login', formData);
+            const response = await API.post('/user/login', formData);
             localStorage.setItem('token', response.data.token);
             alert('Login Successful!');
             window.location.href = '/';

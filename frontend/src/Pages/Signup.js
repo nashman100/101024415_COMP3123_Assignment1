@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import axios from "axios";
+import API from './services/api';
 
 function Signup(){
     const [formData, setFormData] = useState({username: '', email:'', password: ''});
@@ -12,7 +12,7 @@ function Signup(){
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            const response = await axios.post('/user/signup', formData);
+            const response = await API.post('/user/signup', formData);
             alert('Signup was successful! Please login.');
             window.location.href = '/login';
         } catch(err){
