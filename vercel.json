@@ -20,10 +20,11 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/frontend/build/$1"
+      "destination": "/frontend/build/index.html"
     }
   ]
 }
+
 
 
 
