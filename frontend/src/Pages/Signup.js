@@ -12,7 +12,7 @@ function Signup(){
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            const response = await API.post('/user/signup', formData);
+            await API.post('/user/signup', formData);
             alert('Signup was successful! Please login.');
             window.location.href = '/login';
         } catch(err){
