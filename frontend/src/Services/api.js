@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://101024415-comp-3123-assignment1.vercel.app/api/v1',
+  baseURL: 'http://localhost:8081/api/v1',
 });
 
 API.interceptors.request.use((req) => {
@@ -13,3 +13,5 @@ API.interceptors.request.use((req) => {
 });
 
 export default API;
+
+//https://101024415-comp-3123-assignment1.vercel.app/api/v1
