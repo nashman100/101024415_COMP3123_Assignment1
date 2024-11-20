@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import API from "../Services/api";
 import { useParams, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function EmployeeDetails() {
   const { id } = useParams();
@@ -30,6 +31,7 @@ function EmployeeDetails() {
 
   return (
     <div className="d-flex justify-content-center align-items-center mt-4">
+      <Helmet><title>Employee Details - Employee Management App</title></Helmet>
       <div
         className="card shadow-lg"
         style={{ width: "25rem"}} 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import API from "../Services/api";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function AddEmployee() {
   const [formData, setFormData] = useState({first_name: "", last_name: "", email: "", position: "", department: "", salary: "", date_of_joining: "",});
@@ -40,6 +41,7 @@ function AddEmployee() {
 
   return (
     <div className="container mt-5">
+      <Helmet><title>Add Employee - Employee Management App</title></Helmet>
       <h2>Add Employee</h2>
       {error && <div className="alert alert-danger">{error}</div>}
       <form onSubmit={handleSubmit}>

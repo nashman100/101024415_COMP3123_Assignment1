@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import API from "../Services/api";
 import {useParams, useNavigate} from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function EditEmployee() {
   const {id} = useParams();
@@ -74,6 +75,7 @@ function EditEmployee() {
 
   return (
     <div className="container mt-5">
+      <Helmet><title>Edit Employee - Employee Management App</title></Helmet>
       <h2>Edit Employee</h2>
       {error && <div className="alert alert-danger">{error}</div>}
       <form onSubmit={handleSubmit}>

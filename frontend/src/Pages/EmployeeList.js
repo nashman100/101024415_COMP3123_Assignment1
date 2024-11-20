@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import API from "../Services/api";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]); // Necessary for resetting `filteredEmployees`
@@ -88,6 +89,7 @@ function EmployeeList() {
 
   return (
     <div className="container mt-5">
+      <Helmet><title>Employee List - Employee Management App</title></Helmet>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Employee List</h2>
         <button className="btn btn-success" onClick={() => navigate("/add-employee")}>Add Employee</button>

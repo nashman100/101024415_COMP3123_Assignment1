@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import API from '../Services/api';
+import { Helmet } from "react-helmet";
 
 function Signup(){
     const [formData, setFormData] = useState({username: '', email:'', password: ''});
@@ -22,6 +23,7 @@ function Signup(){
 
     return(
         <div className="container mt-5">
+            <Helmet><title>Signup - Employee Management App</title></Helmet>
             <h2>Signup</h2>
             {error && <div className="alert alert-danger">{error}</div>}
             <form onSubmit={handleSubmit}>

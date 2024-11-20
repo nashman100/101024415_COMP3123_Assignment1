@@ -1,6 +1,7 @@
 import React from "react";
 import API from "../Services/api";
 import { useParams, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function DeleteEmployee() {
   const { id } = useParams();
@@ -36,6 +37,7 @@ function DeleteEmployee() {
 
   return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
+      <Helmet><title>Delete Employee - Employee Management App</title></Helmet>
       <div className="card shadow-lg" style={{ width: "25rem" }}>
         <div className="card-body">
           <h5 className="card-title text-center">Delete Confirmation</h5>

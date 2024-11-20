@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import API from '../Services/api';
+import { Helmet } from "react-helmet";
 
 function Login(){
     const [formData, setFormData] = useState({email: '', password: ''});
@@ -24,6 +25,7 @@ function Login(){
 
     return(
         <div className="container mt-5">
+            <Helmet><title>Login - Employee Management App</title></Helmet>
             <h2>Login</h2>
             {error && <div className="alert alert-danger">{error}</div>}
             <form onSubmit={handleSubmit}>
