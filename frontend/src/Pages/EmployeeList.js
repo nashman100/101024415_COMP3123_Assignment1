@@ -3,7 +3,7 @@ import API from "../Services/api";
 import { useNavigate } from "react-router-dom";
 
 function EmployeeList() {
-  const [employees, setEmployees] = useState([]);
+  const [employees, setEmployees] = useState([]); // Necessary for resetting `filteredEmployees`
   const [filteredEmployees, setFilteredEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -27,7 +27,7 @@ function EmployeeList() {
           },
         });
         setEmployees(response.data);
-        setFilteredEmployees(response.data); // Initialize with all employees
+        setFilteredEmployees(response.data);
         setLoading(false);
       } catch (err) {
         if (err.response?.status === 401) {
@@ -64,6 +64,12 @@ function EmployeeList() {
     } catch (err) {
       setError(err.response?.data?.message || "Failed to fetch employees.");
     }
+  };
+
+  const resetFilters = () => {
+    setFilteredEmployees(employees);
+    setSearchDepartment("");
+    setSearchPosition("");
   };
 
   if (loading) {
@@ -106,7 +112,8 @@ function EmployeeList() {
           />
         </div>
         <div className="col-12 text-end">
-          <button className="btn btn-primary" onClick={handleSearch}>Search</button>
+          <button className="btn btn-primary me-2" onClick={handleSearch}>Search</button>
+          <button className="btn btn-secondary" onClick={resetFilters}>Reset</button>
         </div>
       </div>
       <div className="table-responsive">
@@ -146,6 +153,7 @@ function EmployeeList() {
 }
 
 export default EmployeeList;
+
 
 
 
