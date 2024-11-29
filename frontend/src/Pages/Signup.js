@@ -12,6 +12,12 @@ function Signup(){
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
+
+        if(formData.password.length < 8){
+            setError('Password must be at least 8 characters long.');
+            return;
+        }
+
         try{
             await API.post('/user/signup', formData);
             alert('Signup was successful! Please login.');
