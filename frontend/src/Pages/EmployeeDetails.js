@@ -58,7 +58,7 @@ function EmployeeDetails() {
             <strong>Department:</strong> {employee.department}
           </div>
           <div className="mb-2">
-            <strong>Salary: $</strong> {employee.salary}
+             <strong>Salary:</strong> {employee.salary ? new Intl.NumberFormat("en-CA", {style: "currency", currency: "CAD"}).format(employee.salary) : "N/A"}
           </div>
           <div className="mb-2">
             <strong>Date of Joining:</strong> {new Date(employee.date_of_joining).toLocaleDateString()}
