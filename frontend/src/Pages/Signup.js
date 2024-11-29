@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import API from '../Services/api';
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 function Signup(){
     const [formData, setFormData] = useState({username: '', email:'', password: ''});
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleInputChange = (e) =>{
         setFormData({...formData, [e.target.name]: e.target.value});
@@ -21,7 +23,7 @@ function Signup(){
         try{
             await API.post('/user/signup', formData);
             alert('Signup was successful! Please login.');
-            window.location.href = '/login';
+            navigate("/login");
         } catch(err){
             setError(err.response?.data?.message || 'Somthing went wrong!');
         }
