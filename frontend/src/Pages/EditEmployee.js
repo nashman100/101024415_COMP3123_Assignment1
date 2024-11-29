@@ -100,6 +100,10 @@ function EditEmployee() {
           <input type="text" name="department" className="form-control" value={formData.department} onChange={handleInputChange} required/>
         </div>
         <div className="mb-3">
+          <label className="form-label">Salary</label>
+          <input type="number" name="salary" className="form-control" value={formData.salary} onChange={handleInputChange} required/>
+        </div>
+        <div className="mb-3">
           <label className="form-label">Date of Joining</label>
           <input type="date" name="date_of_joining" className="form-control" value={formData.date_of_joining} onChange={handleInputChange} required/>
         </div>
