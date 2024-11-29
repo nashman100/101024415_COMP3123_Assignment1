@@ -58,6 +58,9 @@ function EmployeeDetails() {
             <strong>Department:</strong> {employee.department}
           </div>
           <div className="mb-2">
+            <strong>Salary: $</strong> {employee.salary}
+          </div>
+          <div className="mb-2">
             <strong>Date of Joining:</strong> {new Date(employee.date_of_joining).toLocaleDateString()}
           </div>
           <button className="btn btn-secondary mt-3 w-100" onClick={() => navigate("/")}>
